@@ -19,7 +19,7 @@ def get_current_time() -> str:
     return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 # 启动 mcp 服务, 监听8087端口, 本机启动, transport 使用http
-mcp.run(port=8087, host="127.0.0.1", transport="http")
+mcp.run(port=8090, host="127.0.0.1", transport="http")
 
 
 
