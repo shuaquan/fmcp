@@ -18,6 +18,10 @@ mcp = FastMCP('dust_mcp_server')
 def get_current_time() -> str:
     return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
+#mcp.tool 
+def get_hello_world(input: str) -> str:
+    return f"hello {input}"
+
 # 启动 mcp 服务, 监听8087端口, 本机启动, transport 使用http
 mcp.run(port=8090, host="127.0.0.1", transport="http")
 
