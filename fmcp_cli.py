@@ -13,7 +13,7 @@ from fastmcp import Client
 client_http = Client("https://101.200.223.19:8090/mcp")
 
 # 调用 时间工具 获取当前时间 
-current_time = client_http.get_current_time()
+current_time = client_http.call_tool("get_current_time")
 print(current_time)
 
 
