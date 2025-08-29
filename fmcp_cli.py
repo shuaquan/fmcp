@@ -10,14 +10,10 @@ from fastmcp import Client
 服务端使用 8090 端口, 本机启动, transport 使用 http , ip为 101.200.223.19 
 '''
 
-mcp = Client(
-    host='101.200.223.19',
-    port=8090,
-    transport='http'
-)
+client_http = Client("https://101.200.223.19:8090/mcp")
 
 # 调用 时间工具 获取当前时间 
-current_time = mcp.get_current_time()
+current_time = client_http.get_current_time()
 print(current_time)
 
 
