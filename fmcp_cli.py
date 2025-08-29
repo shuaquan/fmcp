@@ -35,7 +35,7 @@ async def main():
         result = await client.call_tool("get_current_time")
         print(result)
 
-        result = await client.call_tool("get_hello_world", "world")
+        result = await client.call_tool("get_hello_world", {"name": "dustinsea"})
         print(result)
 
 asyncio.run(main())
