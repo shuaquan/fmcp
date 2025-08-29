@@ -4,6 +4,7 @@
 
 import time
 from fastmcp import FastMCP
+from pydantic import Field
 
 
 mcp = FastMCP('dust_mcp_server')
@@ -15,11 +16,11 @@ mcp = FastMCP('dust_mcp_server')
 
 # tools 1: 获取当前时间
 @mcp.tool
-def get_current_time() -> str:
+async def get_current_time() -> str:
     return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 @mcp.tool 
-def get_hello_world(name: str) -> str:
+async def get_hello_world(name: str=Field(description="name of the user")) -> str:
     return f"hello {name}"
 
 # 启动 mcp 服务, 监听8087端口, 本机启动, transport 使用http
